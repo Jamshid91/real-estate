@@ -47,27 +47,10 @@
 }
 
 :root {
-  --blue: #007bff;
   --indigo: #1c2936;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
   --red: #b00f40;
-  --orange: #fd7e14;
   --yellow: #ffd553;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
   --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
 }
 
 .text-left {
@@ -335,11 +318,42 @@
   background-image: url("../../images/png/background.png");
   background-repeat: no-repeat;
   background-position: center;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -webkit-background-size: cover;
+          background-size: cover;
   padding-bottom: 98px;
   overflow: hidden;
   margin: 0 auto;
+}
+
+.header .without-intermediaries {
+  width: 430px;
+  height: 80px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: var(--yellow);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 34px;
+  font-family: 'MuseoSans';
+  font-weight: 700;
+  color: var(--indigo);
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.header .mobile_logo {
+  display: none;
 }
 
 .header .nav {
@@ -351,6 +365,10 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 30px;
 }
 
@@ -418,6 +436,32 @@
   text-decoration: none;
 }
 
+.header .check_mobile {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
+  border: 2px solid var(--indigo);
+  color: var(--indigo);
+  border-right-color: transparent;
+  -webkit-transform: rotate(-18deg);
+      -ms-transform: rotate(-18deg);
+          transform: rotate(-18deg);
+  font-size: 16px;
+  position: relative;
+  margin-right: 10px;
+  display: none;
+}
+
+.header .check_mobile .fa-check {
+  -webkit-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+          transform: rotate(18deg);
+  position: absolute;
+  bottom: 0px;
+  left: 2px;
+}
+
 .header-title {
   margin-top: 85px;
 }
@@ -436,33 +480,6 @@
   font-weight: 300;
   color: var(--white);
   text-transform: uppercase;
-}
-
-.header-title .without-intermediaries {
-  width: 430px;
-  height: 80px;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
-  background-color: var(--yellow);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 34px;
-  font-family: 'MuseoSans';
-  font-weight: 700;
-  color: var(--indigo);
-  text-transform: uppercase;
-  margin-top: 40px;
-  margin-bottom: 20px;
 }
 
 .header-title-item {
@@ -506,7 +523,6 @@
           border-radius: 50%;
   background-color: var(--indigo);
   position: absolute;
-  left: -160px;
   top: 0;
   z-index: 0;
   display: -webkit-box;
@@ -525,17 +541,20 @@
 
 .header .about-me .my-photo__img {
   position: absolute;
-  width: 95%;
-  top: 0;
+  width: auto;
+  height: 920px;
+  top: -20px;
   bottom: 0;
-  right: -50px;
+  right: -290px;
   z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header .about-me-title {
   position: relative;
   top: 130px;
-  left: -80px;
+  left: 80px;
   z-index: 5;
 }
 
@@ -552,14 +571,14 @@
   font-family: 'MuseoSans';
   font-weight: 300;
   color: var(--white);
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .header .about-me-sub {
   position: relative;
   z-index: 15;
-  bottom: -340px;
-  left: 75px;
+  bottom: -370px;
+  left: 215px;
   width: 480px;
   height: 120px;
   -webkit-border-radius: 5px;
@@ -587,4 +606,507 @@
   font-family: 'MuseoSans';
   font-weight: 300;
   color: var(--indigo);
+}
+
+@media screen and (max-width: 1330px) {
+  .container {
+    padding: 0 25px;
+  }
+  .without-intermediaries {
+    width: 400px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+  }
+  .header .nav-logo__text {
+    font-size: 35px;
+  }
+  .header .nav-logo__text-sub {
+    font-size: 15px;
+  }
+  .header .nav-contact__item {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .header .nav-contact .middle_icon {
+    margin: 0 20px;
+  }
+  .header .nav-contact-num__number {
+    font-size: 24px;
+  }
+  .header .nav-contact-num__text {
+    font-size: 18px;
+  }
+  .header-title {
+    margin-top: 75px;
+  }
+  .header-title__text {
+    font-size: 55px;
+  }
+  .header-title__sub-text {
+    font-size: 25px;
+  }
+  .header-title-item__list {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+  .header-title-item__list:first-child {
+    margin-top: 40px;
+  }
+  .header-title-item__list .img-check {
+    margin-right: 20px;
+    width: 30px;
+  }
+  .header .about-me {
+    position: relative;
+  }
+  .header .about-me-circle {
+    width: 600px;
+    height: 600px;
+  }
+  .header .about-me .my-photo__img {
+    height: 800px;
+    top: -20px;
+  }
+  .header .about-me-title {
+    top: 110px;
+    left: 80px;
+  }
+  .header .about-me-title__text {
+    font-size: 30px;
+  }
+  .header .about-me-title__text-info {
+    font-size: 22px;
+    margin-top: 25px;
+  }
+  .header .about-me-sub {
+    bottom: -300px;
+    left: 215px;
+    width: 440px;
+    height: 100px;
+    padding: 20px 0 0 40px;
+  }
+  .header .about-me-sub__title {
+    font-size: 26px;
+  }
+  .header .about-me-sub__sub-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 25px;
+  }
+  .without-intermediaries {
+    width: 250px !important;
+    height: 60px !important;
+    font-size: 20px !important;
+    margin-top: 20px !important;
+  }
+  .header .nav-logo__text {
+    font-size: 35px;
+  }
+  .header .nav-logo__text-sub {
+    font-size: 15px;
+  }
+  .header .nav-contact__item {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .header .nav-contact .middle_icon {
+    margin: 0 20px;
+  }
+  .header .nav-contact-num__number {
+    font-size: 24px;
+  }
+  .header .nav-contact-num__text {
+    font-size: 18px;
+  }
+  .header-title {
+    margin-top: 45px;
+    width: auto;
+  }
+  .header-title__text {
+    font-size: 40px;
+  }
+  .header-title__sub-text {
+    font-size: 20px;
+  }
+  .header-title-item__list {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .header-title-item__list:first-child {
+    margin-top: 20px;
+  }
+  .header-title-item__list .img-check {
+    margin-right: 20px;
+    width: 30px;
+  }
+  .header .about-me {
+    position: relative;
+  }
+  .header .about-me-circle {
+    width: 500px;
+    height: 500px;
+    left: -50px;
+  }
+  .header .about-me .my-photo__img {
+    height: 700px;
+    top: -20px;
+    left: 80px;
+  }
+  .header .about-me-title {
+    top: 100px;
+    left: 0px;
+  }
+  .header .about-me-title__text {
+    font-size: 22px;
+  }
+  .header .about-me-title__text-info {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  .header .about-me-sub {
+    bottom: -300px;
+    left: 50px;
+    width: 400px;
+    height: 100px;
+    padding: 20px 0 0 40px;
+  }
+  .header .about-me-sub__title {
+    font-size: 26px;
+  }
+  .header .about-me-sub__sub-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 0 20px;
+  }
+  .without-intermediaries {
+    width: 200px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+  .header .nav-logo__text {
+    font-size: 30px;
+  }
+  .header .nav-logo__text-sub {
+    font-size: 12px;
+  }
+  .header .nav-contact__item {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .header .nav-contact .middle_icon {
+    margin: 0 20px;
+  }
+  .header .nav-contact-num__number {
+    font-size: 20px;
+  }
+  .header .nav-contact-num__text {
+    font-size: 16px;
+  }
+  .header-title {
+    margin-top: 35px;
+    width: auto;
+  }
+  .header-title__text {
+    font-size: 35px;
+  }
+  .header-title__sub-text {
+    font-size: 18px;
+  }
+  .header-title-item__list {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .header-title-item__list:first-child {
+    margin-top: 20px;
+  }
+  .header-title-item__list .img-check {
+    margin-right: 10px;
+    width: 25px;
+  }
+  .header .about-me {
+    position: relative;
+  }
+  .header .about-me-circle {
+    width: 500px;
+    height: 500px;
+    left: -50px;
+  }
+  .header .about-me .my-photo__img {
+    height: 600px;
+    top: -20px;
+    left: 80px;
+  }
+  .header .about-me-title {
+    top: 100px;
+    left: 0px;
+  }
+  .header .about-me-title__text {
+    font-size: 22px;
+  }
+  .header .about-me-title__text-info {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  .header .about-me-sub {
+    bottom: -270px;
+    left: 50px;
+    width: 350px;
+    height: 80px;
+    padding: 10px 0 0 20px;
+  }
+  .header .about-me-sub__title {
+    font-size: 22px;
+  }
+  .header .about-me-sub__sub-title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desctop_logo,
+  .desctop_title_text,
+  .desctop_intermediaries {
+    display: none !important;
+  }
+  .mobile_logo,
+  .mobile_intermediaries,
+  .check_mobile,
+  .mobile_title_text {
+    display: block !important;
+  }
+  .container {
+    padding: 0;
+  }
+  .without-intermediaries {
+    width: 300px !important;
+    height: 60px !important;
+    font-size: 22px !important;
+    margin-left: 20px;
+    text-align: center;
+    padding: 15px;
+  }
+  .header {
+    -webkit-background-size: auto auto;
+            background-size: auto;
+    background-position: top;
+  }
+  .header .nav {
+    padding: 20px;
+    border-bottom: 2px solid #bb2f5a;
+  }
+  .header .nav-logo {
+    margin-top: 30px;
+  }
+  .header .nav-logo__text {
+    font-size: 40px;
+  }
+  .header .nav-logo__text-sub {
+    font-size: 12px;
+  }
+  .header .nav-contact__item {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .header .nav-contact .middle_icon {
+    margin: 0 20px;
+  }
+  .header .nav-contact-num__number {
+    font-size: 20px;
+  }
+  .header .nav-contact-num__text {
+    font-size: 16px;
+  }
+  .header-title {
+    margin-top: 35px;
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .header-title__text {
+    font-size: 45px;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+  .header-title__sub-text {
+    font-size: 22px;
+    margin-left: 20px;
+  }
+  .header-title-item {
+    margin-top: 400px;
+    margin-left: 20px;
+  }
+  .header-title-item__list {
+    font-size: 22px;
+    margin-top: 10px;
+    color: var(--indigo);
+  }
+  .header-title-item__list:first-child {
+    margin-top: 20px;
+  }
+  .header-title-item__list .img-check {
+    display: none;
+  }
+  .header .about-me {
+    position: relative;
+  }
+  .header .about-me-circle {
+    width: 450px;
+    height: 450px;
+    left: 20px;
+  }
+  .header .about-me .my-photo__img {
+    height: 600px;
+    top: -20px;
+    left: 200px;
+  }
+  .header .about-me-title {
+    top: 100px;
+    left: 90px;
+  }
+  .header .about-me-title__text {
+    font-size: 22px;
+  }
+  .header .about-me-title__text-info {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .header .about-me-sub {
+    bottom: -270px;
+    left: 220px;
+    width: 300px;
+    height: 80px;
+    padding: 15px 0 0 10px;
+  }
+  .header .about-me-sub__title {
+    font-size: 20px;
+  }
+  .header .about-me-sub__sub-title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .without-intermediaries {
+    width: 170px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    margin-left: 20px;
+    text-align: center;
+    padding: 7px;
+  }
+  .header {
+    background-image: url(../../images/png/bg-mob.png);
+    -webkit-background-size: 100% 60%;
+            background-size: 100% 60%;
+    padding-bottom: 20px;
+  }
+  .header .nav-logo {
+    margin-top: 15px;
+  }
+  .header .nav-logo__text {
+    font-size: 28px;
+  }
+  .header .nav-logo__text-sub {
+    font-size: 10px;
+    margin-top: -5px;
+  }
+  .header .nav-contact__item {
+    width: 33px;
+    height: 33px;
+    font-size: 16px;
+  }
+  .header .nav-contact .middle_icon {
+    margin: 0 12px;
+  }
+  .header .nav-contact-num__number {
+    font-size: 16px;
+  }
+  .header .nav-contact-num__text {
+    font-size: 12px;
+  }
+  .header-title {
+    margin-top: 35px;
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .header-title__text {
+    font-size: 28px;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+  .header-title__sub-text {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  .header-title-item {
+    margin-top: 200px;
+    margin-left: 20px;
+  }
+  .header-title-item__list {
+    font-size: 14px;
+    margin-top: 10px;
+    color: var(--indigo);
+  }
+  .header-title-item__list:first-child {
+    margin-top: 20px;
+  }
+  .header-title-item__list .img-check {
+    display: none;
+  }
+  .header .about-me {
+    position: relative;
+  }
+  .header .about-me-circle {
+    width: 250px;
+    height: 250px;
+    left: 20px;
+  }
+  .header .about-me .my-photo__img {
+    height: 350px;
+    top: -20px;
+    left: 110px;
+  }
+  .header .about-me-title {
+    top: 50px;
+    left: 50px;
+  }
+  .header .about-me-title__text {
+    font-size: 16px;
+  }
+  .header .about-me-title__text-info {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  .header .about-me-sub {
+    bottom: -160px;
+    left: 125px;
+    width: 185px;
+    height: 45px;
+    padding: 8px 0 0 8px;
+  }
+  .header .about-me-sub__title {
+    font-size: 12px;
+  }
+  .header .about-me-sub__sub-title {
+    font-size: 9px;
+  }
 }
